@@ -7,14 +7,22 @@
 class Queue {
   constructor() {
     this.data = [];
+    this.start = 0;
+    this.end = 0;
   }
 
   add(record) {
     this.data.unshift(record);
+    this.start++;
   }
 
   remove() {
+    this.start--;
     return this.data.pop();
+  }
+  peek(){
+    return this.data[this.end]
+
   }
 }
 
